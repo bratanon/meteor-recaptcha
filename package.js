@@ -6,7 +6,7 @@
  */
 Package.describe({
   name: 'bratanon:recaptcha',
-  version: '0.0.1',
+  version: '1.0.0',
   summary: 'Implementation of Google reCAPTCHA V2 for Meteor',
   git: 'https://github.com/bratanon/meteor-recaptcha',
   documentation: 'README.md'
