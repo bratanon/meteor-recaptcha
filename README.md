@@ -10,7 +10,7 @@ Google reCAPTCHA documentation is available at https://developers.google.com/rec
 
 You will need to sign up for an API key at https://www.google.com/recaptcha/admin
 
-This implementation is based on appshore's verison [https://github.com/appshore/Meteor-reCAPTCHA].
+This implementation is based on the [appshore verison](https://github.com/appshore/Meteor-reCAPTCHA).
 
 ## Installation
 
@@ -61,11 +61,11 @@ Include the `{{> reCAPTCHA widget_id="captcha_widget_id"}}` template block in yo
 ``` html
 <template name="myTemplate">
     <form>
-    	<!-- your form fields... -->
+        <!-- Your form fields... -->
 
-    	{{> reCAPTCHA widget_id="captcha_widget_id"}}
+        {{> reCAPTCHA widget_id="captcha_widget_id"}}
 
-    	<button type="submit">Submit</button>
+        <button type="submit">Submit</button>
     </form>
 </template>
 ```
@@ -78,10 +78,10 @@ Template.myTemplate.events({
         evt.preventDefault();
 
         var formData = {
-            //get the data from your form fields
+            // Get the data from your form fields
             ...
 
-            // and the recaptcha response
+            // Add the recaptcha response
             recaptcha: reCAPTCHA.getResponse("captcha_widget_id")
         };
 
@@ -89,8 +89,8 @@ Template.myTemplate.events({
             console.log('result: ', error, result);
         });
 
-        // If the page is not redirected, and the user can submit the same form again you have to reset the captcha
-        // widget.
+        // If the page is not redirected on submit and the user can submit the same form again you have to
+        // reset the captcha widget.
         reCAPTCHA.reset("captcha_widget_id");
     }
 });
@@ -98,7 +98,8 @@ Template.myTemplate.events({
 
 ###On The Server
 
-In the server method, pass the captcha data and the user's IP address to `reCAPTCHA.verifyCaptcha(clientIP, captchaData)` to verify that the user entered the correct text.
+In the server method, pass the captcha data and the user's IP address to
+`reCAPTCHA.verifyCaptcha(clientIP, captchaData)` to verify that the user entered the correct text.
 
 ``` javascript
 Meteor.methods({
